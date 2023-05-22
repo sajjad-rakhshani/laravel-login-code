@@ -15,5 +15,15 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SajjadRakhshani\\LaravelLoginCode\\Providers"
+            ],
+            "dont-discover": [
+                "*"
+            ]
+        }
+    }
 }
