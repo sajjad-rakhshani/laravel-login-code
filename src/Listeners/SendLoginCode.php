@@ -2,8 +2,8 @@
 
 namespace SajjadRakhshani\LaravelLoginCode\Listeners;
 
-use App\Events\LoginRequest;
 use Illuminate\Support\Facades\Log;
+use SajjadRakhshani\LaravelLoginCode\Events\LoginRequest;
 
 class SendLoginCode
 {

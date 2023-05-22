@@ -2,9 +2,8 @@
 
 namespace SajjadRakhshani\LaravelLoginCode\Listeners;
 
-use App\Events\LoginRequest;
-use App\Models\LoginCode;
 use Illuminate\Support\Facades\Hash;
+use SajjadRakhshani\LaravelLoginCode\Events\LoginRequest;
 
 class CreateLoginCode
 {
