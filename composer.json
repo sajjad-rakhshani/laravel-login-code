@@ -1,0 +1,19 @@
+{
+    "name": "sajjad-rakhshani/laravel-login-code",
+    "description": "a laravel package to login with verification code",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SajjadRakhshani\\LaravelLoginCode\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sajjad-rakhshani",
+            "email": "sajjad.rakhsjani@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
