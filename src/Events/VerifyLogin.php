@@ -18,7 +18,7 @@ class VerifyLogin
     {
         $hashed = $user->LoginCode;
         if ($hashed && now()->isBefore($hashed->expire) && Hash::check($code, $hashed->code)){
-            Auth::login($this->user);
+            Auth::login($this->user, true);
             if (is_null($user->mobile_verified_at)) $user->update(['mobile_verified_at' => now()]);
             setcookie('code_sent', 0, time() - 1, '/');
         }
