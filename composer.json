@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SajjadRakhshani\\LaravelLoginCode\\Providers"
+                "SajjadRakhshani\\LaravelLoginCode\\Providers\\LoginCodeProvider"
             ],
             "dont-discover": [
                 "*"
