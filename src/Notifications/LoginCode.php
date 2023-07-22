@@ -16,7 +16,10 @@ class LoginCode extends Notification
 
     public function via(object $notifiable): array
     {
-        return [LogChannel::class];
+        return [
+            LogChannel::class,
+            SmsChannel::class
+        ];
     }
 
     public function toArray(object $notifiable): array
