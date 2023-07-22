@@ -8,6 +8,6 @@ class SmsChannel
 {
     public function send($notifiable, Notification $notification)
     {
-        IppanelSms::verify($notifiable->mobile, $notifiable->code);
+        IppanelSms::verify($notifiable->mobile, $notification->code);
     }
 }
