@@ -4,16 +4,14 @@ namespace SajjadRakhshani\LaravelLoginCode;
 
 class IppanelSms
 {
-    private $apikey = "ffa928b287bea90f16e7e4e";
-    private $secret = "kksskjh!!2223jhghj@@";
     private $token;
     public function __construct()
     {
         $result = $this->sendCurl(
             adress: 'https://RestfulSms.com/api/Token',
             data: [
-                'UserApiKey' => $this->apikey,
-                'SecretKey' => $this->secret
+                'UserApiKey' => env('IPPANEL_API_KEY'),
+                'SecretKey' => env('IPPANEL_SECRET')
             ]
         );
         $this->token = $result->TokenKey;
@@ -49,8 +47,8 @@ class IppanelSms
     }
 
     public static function verify(string $mobile, int $code){
-        return self::sendPattern($mobile, '75173', ['VerificationCode'=>$code]);
-    }
+        return self::sendPattern($mobile, env('IPPANEL_LOGIN_PATTERN'), ['VerificationCode'=>$code]);
+    } //send verification code
 
     public static function sendPattern(string $mobile, int $template, array $params = [])
     {
