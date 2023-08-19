@@ -11,6 +11,5 @@ class SmsChannel
     public function send($notifiable, Notification $notification)
     {
         (new Sms())->smsPanel::verify($notifiable->mobile, $notification->code);
-//        IppanelSms::verify($notifiable->mobile, $notification->code);
     }
 }
