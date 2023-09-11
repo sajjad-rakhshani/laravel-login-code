@@ -15,7 +15,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "ippanel/php-rest-sdk": "^2.0"
+    },
     "extra": {
         "laravel": {
             "providers": [

@@ -12,6 +12,9 @@ class Sms
             case 'Ippanel' :
                 $this->smsPanel = new IppanelSms();
                 break;
+            case 'Ippanel2' :
+                $this->smsPanel = new Ippanel2Sms();
+                break;
         }
     }
 }
