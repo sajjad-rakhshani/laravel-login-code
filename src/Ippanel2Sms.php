@@ -6,7 +6,7 @@ class Ippanel2Sms implements SmsInterface {
 
     public function __construct()
     {
-        $this->apikey = env('IPPANEL2_API_KEY');
+        $this->apikey = get_option('ippanel_api_key');
         $this->client = new \IPPanel\Client($this->apikey);
     }
 
@@ -14,11 +14,11 @@ class Ippanel2Sms implements SmsInterface {
     {
         $sms = new self();
         $sms->client->sendPattern(
-            env('IPPANEL2_LOGIN_PATTERN'),
-            '+982153237',
+            get_option('login_pattern'),
+            get_option('sms_sender'),
             $mobile,
             [
-                'VerificationCode' => $code
+                'code' => $code
             ]
         );
     }
@@ -28,10 +28,11 @@ class Ippanel2Sms implements SmsInterface {
         $sms = new self();
         $sms->client->sendPattern(
             $template,
-            '+982153237',
+            get_option('sms_sender'),
             $mobile,
             $params
         );
+
     }
 
 }
